@@ -1,0 +1,74 @@
+org: DittoTRX
+author: Philipp Mieden
+description: Transformations for the ditto tool
+
+entities:
+  - name: Domain
+    description: A domain likely used for phishing
+    parent: maltego.Domain
+    fields:
+      - name: unicode
+        description: Unicode representation of domain name
+      - name: ascii
+        description: ASCII representation of domain name
+      - name: status
+        description: Registration status of domain name
+      - name: ips
+        description: IPs for the domain name
+      - name: names
+        description: DNS names that resolve to this domains IPs
+      - name: registrar
+        description: The name of the registrar
+      - name: created_at
+        description: The date of creation
+      - name: updated_at
+        description: The last update
+      - name: expires_at
+        description: The date of expiry
+      - name: nameservers
+        description: Nameservers associated with domain
+
+executable: go
+transforms:
+  - id: LookupAddr
+    input: maltego.IPv4Address
+    description: Lookup Address
+    args:
+      - run
+      - /Users/alien/go/src/github.com/dreadl0ck/maltego/cmd/transform/lookupAddr/main.go
+  - id: ToDomainNames
+    input: dittotrx.Domain
+    description: To Domain Names
+    args:
+      - run
+      - /Users/alien/go/src/github.com/dreadl0ck/maltego/cmd/transform/toDomains/main.go
+  - id: ToRegistrarNames
+    input: dittotrx.Domain
+    description: To Registrar Names
+    args:
+      - run
+      - /Users/alien/go/src/github.com/dreadl0ck/maltego/cmd/transform/toRegistrars/main.go
+  - id: ToNameServers
+    input: dittotrx.Domain
+    description: To Name Servers
+    args:
+      - run
+      - /Users/alien/go/src/github.com/dreadl0ck/maltego/cmd/transform/toNameServers/main.go
+  - id: ToCreationDate
+    input: dittotrx.Domain
+    description: To Creation Date
+    args:
+      - run
+      - /Users/alien/go/src/github.com/dreadl0ck/maltego/cmd/transform/toDateCreatedAt/main.go
+  - id: ToIPAddresses
+    input: dittotrx.Domain
+    description: To IP Addresses
+    args:
+      - run
+      - /Users/alien/go/src/github.com/dreadl0ck/maltego/cmd/transform/toIPAddresses/main.go
+  - id: VisitDomain
+    input: dittotrx.Domain
+    description: Open Domain in default Browser
+    args:
+      - run
+      - /Users/alien/go/src/github.com/dreadl0ck/maltego/cmd/transform/visitDomain/main.go
