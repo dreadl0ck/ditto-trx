@@ -115,7 +115,7 @@ var ditto = func(status string, hasIP bool, args ...string) http.HandlerFunc {
 }
 
 func addEntity(t *maltego.Transform, rec []string) {
-	e := t.AddEntity("dittotrx.Domain", rec[0])
+	e := t.AddEntity("dittotrx.IDNDomain", rec[0])
 	e.AddProp("unicode", rec[0])
 	e.AddProp("ascii", rec[1])
 	e.AddProp("status", rec[2])
