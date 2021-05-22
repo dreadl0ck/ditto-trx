@@ -1,4 +1,4 @@
-# Maltego
+# DittoTRX
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/dreadl0ck/maltego)](https://goreportcard.com/report/github.com/dreadl0ck/maltego)
 [![License](https://img.shields.io/badge/license-GPL-green)](https://raw.githubusercontent.com/dreadl0ck/ditto-trx/master/LICENSE)
