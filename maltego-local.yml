@@ -31,34 +31,49 @@ entities:
       - name: nameservers
         description: Nameservers associated with domain
 
-workingDir: ~
+executable: go
+workingDir: ~/go/src/github.com/dreadl0ck/ditto-trx
 
 transforms:
   - id: LookupAddr
     input: maltego.IPv4Address
     description: Lookup Address
-    executable: /usr/local/bin/lookupAddr
+    args:
+      - run
+      - cmd/transform/lookupAddr/main.go
   - id: ToDomainNames
     input: dittotrx.IDNDomain
     description: To Domain Names
-    executable: /usr/local/bin/toDomains
+    args:
+      - run
+      - cmd/transform/toDomains/main.go
   - id: ToRegistrarNames
     input: dittotrx.IDNDomain
     description: To Registrar Names
-    executable: /usr/local/bin/toRegistrars
+    args:
+      - run
+      - cmd/transform/toRegistrars/main.go
   - id: ToNameServers
     input: dittotrx.IDNDomain
     description: To Name Servers
-    executable: /usr/local/bin/toNameServers
+    args:
+      - run
+      - cmd/transform/toNameServers/main.go
   - id: ToCreationDate
     input: dittotrx.IDNDomain
     description: To Creation Date
-    executable: /usr/local/bin/toDateCreatedAt
+    args:
+      - run
+      - cmd/transform/toDateCreatedAt/main.go
   - id: ToIPAddresses
     input: dittotrx.IDNDomain
     description: To IP Addresses
-    executable: /usr/local/bin/toIPAddresses
+    args:
+      - run
+      - cmd/transform/toIPAddresses/main.go
   - id: VisitDomain
     input: dittotrx.IDNDomain
     description: Open Domain in default Browser
-    executable: /usr/local/bin/visitDomain
+    args:
+      - run
+      - cmd/transform/visitDomain/main.go

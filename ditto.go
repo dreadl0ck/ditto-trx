@@ -61,6 +61,8 @@ var ditto = func(status string, hasIP bool, args ...string) http.HandlerFunc {
 		start := time.Now()
 
 		// run ditto
+		// we are running inside a docker container, the ditto binary has been copied into it at build time.
+		// TODO: drop privileges
 		out, err := exec.Command("/root/ditto",  finalArgs...).CombinedOutput()
 		if err != nil {
 			fmt.Println(string(out))
