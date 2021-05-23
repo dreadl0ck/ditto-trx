@@ -1,5 +1,5 @@
 /*
- * MALTEGO - Go package that provides datastructures for interacting with the Maltego graphical link analysis tool.
+ * DITTO-TRX - A maltego transform server for IDN homograph attacks
  * Copyright (c) 2021 Philipp Mieden <dreadl0ck [at] protonmail [dot] ch>
  *
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
