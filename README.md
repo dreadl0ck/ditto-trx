@@ -3,9 +3,19 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/dreadl0ck/maltego)](https://goreportcard.com/report/github.com/dreadl0ck/maltego)
 [![License](https://img.shields.io/badge/license-GPL-green)](https://raw.githubusercontent.com/dreadl0ck/ditto-trx/master/LICENSE)
 
-A [Maltego](https://www.maltego.com) transform server that implements a transform set to handle queries to the [Ditto](https://github.com/evilsocket/ditto) IDN homograph attacks and detection tool.
+A [Maltego](https://www.maltego.com) transform server that implements a transform set to handle queries to the [Ditto](https://github.com/evilsocket/ditto) IDN homograph attacks and detection tool,
+as well as local transformations for working with the resulting entities.
+You can read more about it in my accompanying blogpost [](https://dreadl0ck.net/posts/ditto-trx).
 
-## Transforms
+## Remote Transforms
+
+- SimilarDomains
+- RegisteredDomains
+- LiveDomains
+- AvailableDomains
+- LiveDomainsTLD
+
+## Local Transforms
 
 - LookupAddr
 - ToDomainNames
