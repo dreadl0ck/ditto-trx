@@ -5,7 +5,7 @@
 
 A [Maltego](https://www.maltego.com) transform server that implements a transform set to handle queries to the [Ditto](https://github.com/evilsocket/ditto) IDN homograph attacks and detection tool,
 as well as local transformations for working with the resulting entities.
-You can read more about it in my accompanying blogpost [](https://dreadl0ck.net/posts/ditto-trx).
+You can read more about it in my accompanying [blogpost](https://dreadl0ck.net/posts/ditto-trx).
 
 ## Remote Transforms
 
